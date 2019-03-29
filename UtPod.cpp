@@ -30,6 +30,10 @@ UtPod::UtPod(int size)
     {
         size = MAX_MEMORY;
     }
+    else
+    {
+        this. -> size = size;
+    }
 }
 
 /*FUNCTION - int addSong
@@ -41,7 +45,7 @@ UtPod::UtPod(int size)
 
  input parms - address of the Song being added
 
- output parms -
+ output parms - -1 or 0
 */
 
 int UtPod::addSong(Song const &s)
@@ -97,11 +101,9 @@ int removeSong(Song const &s)
         else
         {
             prev -> next = s -> next;
-            podMemSize -= s.getsize();
+            podMemSize += s.getsize();
             return SUCCESS;
         }
-
-
 
     }
 
@@ -160,26 +162,26 @@ void sortSongList()
 
    output parms -
 */
-/*
+
 void clearMemory()
 {
 
 }
-*/
+
 
 /* FUNCTION - int getTotalMemory
  *  returns the total amount of memory in the UtPod
     o will do nothing if there are less than two songs in the current list
 
-   input parms -
+   input parms - none
 
    output parms -
 */
-/*
+
     int getTotalMemory() {
-        return memSize;
+        return podMemSize;
     }
-*/
+
 
 
 /* FUNCTION - int getRemainingMemory
@@ -189,10 +191,10 @@ void clearMemory()
 
    output parms -
 */
-/*
+
 int getRemainingMemory()
 {
-
+    return podMemSize;
 }
-*/
+
 
