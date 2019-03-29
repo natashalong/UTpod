@@ -80,14 +80,25 @@ int removeSong(Song const &s)
 {
     if (songs == nullptr)
     {
-        return -1;
+        return NO_MEMORY;
     }
     else
     {
         SongNode *prev = songs;
-        while (prev -> next != songs || prev != nullptr)       //find the previous node
+        while (prev -> next != (SongNode *) &s || prev != nullptr)       //find the previous node
         {
             prev = prev -> next;
+        }
+
+        if (prev == nullptr)
+        {
+            return NOT_FOUND;
+        }
+        else
+        {
+            prev -> next = s -> next;
+            podMemSize -= s.getsize();
+            return SUCCESS;
         }
 
 
