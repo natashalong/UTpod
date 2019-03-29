@@ -46,16 +46,21 @@ UtPod::UtPod(int size)
 
 int UtPod::addSong(Song const &s)
 {
-    if(podMemSize < s.getsize()){
-        return -1;
-    }else
-
+    if(podMemSize < s.getsize())
     {
-        if(songs == nullptr)
-        {
-
-        }
+        return -1;
     }
+    else
+    {
+
+        SongNode temp;
+        temp.s = s;
+        temp.next = songs;
+        songs = &s;
+        return 0;
+
+    }
+
 }
 
 
@@ -70,12 +75,27 @@ int UtPod::addSong(Song const &s)
 
    output parms -
 */
-/*
+
 int removeSong(Song const &s)
 {
+    if (songs == nullptr)
+    {
+        return -1;
+    }
+    else
+    {
+        SongNode *prev = songs;
+        while (prev -> next != songs || prev != nullptr)       //find the previous node
+        {
+            prev = prev -> next;
+        }
+
+
+
+    }
 
 }
-*/
+
 
 /* FUNCTION - void shuffle
  *  shuffles the songs into random order
