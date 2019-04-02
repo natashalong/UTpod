@@ -7,6 +7,13 @@
 
 using namespace std;
 
+Song::Song()
+{
+    artist = "";
+    title = "";
+    size = 0;
+}
+
 Song::Song(string _artist, string _title, int _size)
 {
     artist = _artist;
@@ -14,7 +21,7 @@ Song::Song(string _artist, string _title, int _size)
     size = _size;
 }
 
-void Song:: setartist(char art)
+void Song:: setartist(string art)
 {
     artist = art;
 }
@@ -46,15 +53,74 @@ int Song:: getsize() const
 
 bool Song::operator>(Song const &rhs)
 {
-    if(artist > rhs.artist){
-        return true;
+    if(artist != rhs.artist){
+        if(artist > rhs.artist)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
     }
-    if(title > rhs.title){
-        return true;
+    if(title != rhs.title){
+        if(title > rhs.title)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
     }
-    if(size > rhs.size){
-        return true;
+    if(size != rhs.size){
+        if(size > rhs.size)
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
     }else{
         return false;
+    }
+}
+
+bool Song::operator<(Song const &rhs) {
+    if (artist != rhs.artist) {
+        if (artist < rhs.artist) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (title != rhs.title) {
+        if (title < rhs.title) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    if (size != rhs.size) {
+        if (size > rhs.size) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+bool Song::operator==(Song const &rhs)
+{
+    if(artist != rhs.artist){
+        return false;
+    }
+    if(title != rhs.title){
+        return false;
+    }
+    if(size != rhs.size){
+        return false;
+    }else{
+        return true;
     }
 }

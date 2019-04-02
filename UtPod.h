@@ -29,7 +29,7 @@ private:
         SongNode *next;
     };
 
-    SongNode *songs;  //the head pointer
+    SongNode *songs = nullptr;  //the head pointer
 
     int podMemSize;  //the total amount of memory available on the UtPod
 
@@ -72,7 +72,7 @@ public:
        output parms -
     */
 
-    //int removeSong(Song const &s);
+    int removeSong(Song const &s);
 
 
     /* FUNCTION - void shuffle
@@ -96,7 +96,7 @@ public:
        output parms -
     */
 
-    //void showSongList();
+    void showSongList();
 
 
     /* FUNCTION - void sortSongList
@@ -108,7 +108,7 @@ public:
        output parms -
     */
 
-    //void sortSongList();
+    void sortSongList();
 
 
     /* FUNCTION - void clearMemory
@@ -129,11 +129,9 @@ public:
 
        output parms -
     */
-/*
-    int getTotalMemory() {
-        return memSize;
-    }
-*/
+
+    int getTotalMemory();
+
 
 
     /* FUNCTION - int getRemainingMemory
@@ -144,7 +142,7 @@ public:
        output parms -
     */
 
-    //int getRemainingMemory();
+    int getRemainingMemory();
 
 
     //~UtPod();

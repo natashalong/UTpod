@@ -25,9 +25,10 @@ private:
 
 public:
 
+    Song();
     Song(string artist, string title, int size);
 
-    void setartist(char);
+    void setartist(string);
     string getartist() const;
     void settitle(char);
     string gettitle() const;
@@ -36,9 +37,7 @@ public:
 
 //greater than for sorting songs
     bool operator >(Song const &rhs);
-    //bool operator <(Song const &rhs);
-    //bool operator ==(Song const &rhs);
-
-
+    bool operator <(Song const &rhs);
+    bool operator ==(Song const &rhs);
 
 };
