@@ -1,102 +1,56 @@
 //
-// Created by Natasha Long on 4/2/2019.
+// Created by Austin on 3/26/2019.
 //
 
+
 #include "Song.h"
-
-
+#include <time.h>
 
 using namespace std;
 
-
-
 Song::Song()
-
 {
-
     artist = "";
-
     title = "";
-
     size = 0;
-
 }
-
-
 
 Song::Song(string _artist, string _title, int _size)
-
 {
-
     artist = _artist;
-
     title = _title;
-
     size = _size;
-
 }
-
-
 
 void Song:: setartist(string art)
-
 {
-
     artist = art;
-
 }
-
-
 
 string Song:: getartist() const
-
 {
-
     return artist;
-
 }
 
-
-
-void Song:: settitle(char tit)
-
+void Song:: settitle(string tit)
 {
-
     title = tit;
-
 }
-
-
 
 string Song:: gettitle() const
-
 {
-
     return title;
-
 }
-
-
 
 void Song:: setsize(int siz)
-
 {
-
     size = siz;
-
 }
-
-
 
 int Song:: getsize() const
-
 {
-
     return size;
-
 }
-
-
 
 bool Song::operator>(Song const &rhs)
 //greater means it should be lower on the list
@@ -206,3 +160,4 @@ bool Song::operator==(Song const &rhs)
     }
 
 }
+
